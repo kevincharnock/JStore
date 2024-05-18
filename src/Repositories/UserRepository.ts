@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
-export class UserRepository{
+export class UsersRepository{
 
     //Salvando em array por enquanto
     private users = [];
