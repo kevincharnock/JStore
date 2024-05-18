@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { Usercontroller } from '../Controllers/UsersController';
+import { Usercontroller } from '../Jstore.Controllers/UsersController';
 import { UsersModule } from './Users.module';
 import { ProductsModule } from './Products.module';
 

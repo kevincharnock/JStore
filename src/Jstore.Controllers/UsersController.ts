@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
-import { UsersRepository } from "../Repositories/UserRepository";
+import { UsersRepository } from "../Jstore.Repositories/UserRepository";
 
 @Controller('/users')
 export class Usercontroller{
@@ -11,7 +11,6 @@ export class Usercontroller{
     constructor(private userRepository: UsersRepository){}
 
 //FAZENDO CRUD DE EXEMPLO
-
 
 @Post()
 //Salvando repository de array

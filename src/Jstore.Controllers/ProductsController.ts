@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
-import { ProductsRepository } from "src/Repositories/ProductsRepository";
+import { ProductsRepository } from "src/Jstore.Repositories/ProductsRepository";
 
 @Controller('/products')
 export class ProductsController{
