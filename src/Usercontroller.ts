@@ -5,7 +5,9 @@ import { UserRepository } from "./Repositories/UserRepository";
 export class Usercontroller{
 
     //INSTANCIANDO REPOSITORY
-    private userRepository = new UserRepository;
+    //private userRepository = new UserRepository;
+
+    constructor(private userRepository: UserRepository){}
 
 //FAZENDO CRUD DE EXEMPLO
 
