@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
 import { UsersRepository } from "../Jstore.Repositories/UserRepository";
+import { UsersDto } from "src/Jstore.Dtos.ts/UsersDto";
 
 @Controller('/users')
 export class Usercontroller{
@@ -14,9 +15,9 @@ export class Usercontroller{
 
 @Post()
 //Salvando repository de array
-async createUser(@Body() userFields){
-    this.userRepository.saveUser(userFields);
-    return userFields;
+async createUser(@Body() userDatas: UsersDto){
+    this.userRepository.saveUser(userDatas);
+    return userDatas;
 
 }
 
