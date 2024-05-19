@@ -1,4 +1,5 @@
 import { IsEmail, IsNotEmpty, IsString, MinLength } from "class-validator";
+import { IsEmailUnique } from "src/Validations/UnicEmailValidator";
 
 
 export class UsersDto{
@@ -10,6 +11,7 @@ export class UsersDto{
     @IsNotEmpty({message: 'Campo não pode ser vazio'})
     name: String;
 
+    @IsEmailUnique({message: "Email Já cadastrado, tente outro"})
     @IsEmail(undefined,{message: 'Digite de acordo o e-mail'})
     email: String;
 

@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
-export class UsersRepository{
+export class UsersRepository{    
 
     //Salvando em array por enquanto
     private users = [];
@@ -15,4 +15,12 @@ export class UsersRepository{
     async listUsers(){
         return this.users;
     }
+
+    async ifExistEmail(email: String){
+        const possibleUser = this.users.find(
+            users => users.email === email
+        );
+        return possibleUser !== undefined;
+    }
+
 }
