@@ -1,5 +1,5 @@
 import { IsEmail, IsNotEmpty, IsString, MinLength } from "class-validator";
-import { IsEmailUnique } from "src/Validations/UnicEmailValidator";
+import { IsEmailUnique } from "src/Jstore.Validations/UnicEmailValidator";
 
 
 export class UsersDto{
