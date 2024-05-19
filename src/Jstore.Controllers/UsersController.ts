@@ -15,6 +15,7 @@ export class Usercontroller{
 
 @Post()
 //Salvando repository de array
+//Referenciando um DTO como dados de entrada de requisição.
 async createUser(@Body() userDatas: UsersDto){
     this.userRepository.saveUser(userDatas);
     return userDatas;
