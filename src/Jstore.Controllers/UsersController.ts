@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { UsersRepository } from "../Jstore.Repositories/UserRepository";
 import { UsersDto } from "src/Jstore.Dtos.ts/UsersDto";
 import { UsersEntity } from "src/Jstore.Entities/UsersEntity";
@@ -35,8 +35,21 @@ async createUser(@Body() userDatas: UsersDto){
 @Get()
 async listUsers(){
     return this.userRepository.listUsers();
-    
 
+}
+
+@Put('/:id')
+async updateUsers(@Param('id') id: uuid, @Body() newDatas: UsersDto ){
+    const updateUser = await this.userRepository.updateUsers(id, newDatas);
+}
+
+@Delete('/:id')
+async deleteUser(@Param('id') id: uuid){
+    const deletedUser = await this.userRepository.remove(id);
+    return{
+        user: deletedUser,
+        message: 'Usuário removido'
+    }
 }
 
 
